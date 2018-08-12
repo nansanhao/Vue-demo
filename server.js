@@ -6,11 +6,15 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static('dist'));
 
 // 后端api路由
 //显示主页面
-app.get('/api/home',function (req,res) {
-    res.send("主页面")
+app.get('/',function (req,res) {
+    res.sendFile(__dirname+"\\dist\\index.html")
+    // res.sendFile("F:\\WorkPlace\\Vue-cli-Projects\\First-Vue-Demo\\dist\\index.html")
+    // console.log(__dirname,"../dist/index.html")
+    // res.sendFile(__dirname,"../dist/index.html")
 
 });
 

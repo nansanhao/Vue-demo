@@ -53,7 +53,7 @@ export default {
   border-radius: 16px;
 }
 .section:hover {
-  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.5), 0 0px 60px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.5);
   transition-duration: 0.5s;
 }
 #drag-demo {
