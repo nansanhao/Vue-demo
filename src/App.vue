@@ -1,9 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h2>Vue常用组件实现</h2>
-    <Nav :components="components"></Nav>
-    <router-view></router-view>
+    <div class="title-wrap">
+      <img src="./assets/logo.png" style="width:200px;height:200px">
+      <h2>Vue常用组件实现</h2>
+    </div>
+    <div class="content-wrap">
+      <div class="nav-wrap">
+        <Nav :items="components"></Nav>
+      </div>
+      <div class="component-wrap">
+        <router-view ></router-view>
+      </div>
+      
+    </div>
+    
     <!-- <div class="c-wrap">
       <div class="c-item" v-for="(component,index) in components" :key="index">
         <router-link active-class="c-item-n" :to="component.link_to"><h2>{{component.name}}</h2></router-link>
@@ -32,6 +42,7 @@ export default {
   name: "app",
   data: function() {
     return {
+      
       components: [
         {
           name: "导航栏",
@@ -39,15 +50,27 @@ export default {
         },
         {
           name: "轮播图",
-          link_to: "/nav"
+          link_to: "/carousel-map"
         },
         {
           name: "下拉菜单",
-          link_to: "/nav"
+          link_to: "/drop-down"
         },
         {
-          name: "导航栏",
-          link_to: "/nav"
+          name: "tab页面",
+          link_to: "/tab"
+        },
+        {
+          name: "模态框",
+          link_to: "/modal"
+        },
+        {
+          name: "登陆注册",
+          link_to: "/login-register"
+        },
+        {
+          name: "登陆注册",
+          link_to: "/login-register"
         }
       ]
     };
@@ -73,8 +96,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center;
+  
+}
+.content-wrap{
+display: flex;
 }
 .c-wrap {
   width: 720px;
@@ -96,12 +123,17 @@ export default {
   justify-content: center;
   transition-duration: 0.5s;
 }
-/* .c-item-n{
-  color: white;
-  text-decoration:none;
+.nav-wrap{
+  width: 240px;
+  margin-right: 20px;
+  
 }
-.c-item:hover{
-  box-shadow: 0 0px 60px 0 rgba(0, 0, 0, 0.9), 0 0px 60px 0 rgba(0, 0, 0, 0.2);
-} */
+.component-wrap{
+  width: 900px;
+  background-color: #41b883;
+  border-radius: 20px 0 0 20px;
+  height: 1000px;
+  padding: 20px;
+}
 
 </style>

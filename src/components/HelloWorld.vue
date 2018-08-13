@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <div class="section" v-on:drop="drop($event)" v-on:dragover="allowDrop($event)">
+    <div class="wrap">
+      <div class="section" v-on:drop="drop($event)" v-on:dragover="allowDrop($event)">
       <div id="drag-demo" draggable="true" v-on:dragstart="drag($event)" @click="click" >
 
       </div>
       
     </div>
     <div class="section" v-on:drop="drop($event)" v-on:dragover="allowDrop($event)"></div>
+    </div>
+    
   </div>
 </template>
 
@@ -19,11 +22,8 @@ export default {
     };
   },
   methods: {
-    click(){
-     
-    },
+    click() {},
     drag(ev) {
-      
       ev.dataTransfer.setData("Text", ev.target.id);
     },
     drop(ev) {
@@ -40,16 +40,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#app {
+.wrap{
   display: flex;
 }
 .section {
   display: flex;
-  width: 50%;
-  height: 400px;
-  background-color: #4caf50;
-  padding: 40px;
-  margin: 20px;
+  width: 400px;
+  height: 300px;
+  background-color: #35495e;
+  padding: 10px;
+  margin: 10px;
   border-radius: 16px;
 }
 .section:hover {
@@ -57,10 +57,10 @@ export default {
   transition-duration: 0.5s;
 }
 #drag-demo {
-  width: 200px;
-  height: 200px;
-  background-color: #35495e;
+  width: 120px;
+  height: 120px;
+  background-color: white;
   border-radius: 20px;
-  margin: 10px
+  margin: 10px;
 }
 </style>
